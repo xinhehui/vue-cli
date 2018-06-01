@@ -35,7 +35,7 @@ If you wish to customize the generated CSS modules class names, you can do so vi
 
 You can select pre-processors (Sass/Less/Stylus) when creating the project. If you did not do so, you can also just manually install the corresponding webpack loaders. The loaders are pre-configured and will automatically be picked up. For example, to add Sass to an existing project, simply run:
 
-``` sh
+``` bash
 npm install -D sass-loader node-sass
 ```
 

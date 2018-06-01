@@ -136,7 +136,7 @@ Since `@vue/cli-service` abstracts away the webpack config, it may be more diffi
 
 The command prints to stdout by default, so you can redirect that into a file for easier inspection:
 
-``` sh
+``` bash
 vue inspect > output.js
 ```
 
@@ -144,7 +144,7 @@ Note the output is not a valid webpack config file, it's a serialized format onl
 
 You can also inspect a certain path of the config to narrow it down:
 
-``` sh
+``` bash
 # only inspect the first rule
 vue inspect module.rules.0
 ```

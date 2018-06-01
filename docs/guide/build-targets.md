@@ -1,6 +1,6 @@
-## Build Targets
+# Build Targets
 
-### App
+## App
 
 App mode is the default mode. In this mode:
 
@@ -9,7 +9,7 @@ App mode is the default mode. In this mode:
 - static assets under 10kb are inlined into JavaScript
 - static assets in `public` are copied into output directory
 
-### Library
+## Library
 
 You can build a single entry as a library using
 
@@ -40,7 +40,7 @@ A lib build outputs:
 
 **In lib mode, Vue is externalized.** This means the bundle will not bundle Vue even if your code imports Vue. If the lib is used via a bundler, it will attempt to load Vue as a dependency through the bundler; otherwise, it falls back to a global `Vue` variable.
 
-### Web Component
+## Web Component
 
 > [Compatibility](https://github.com/vuejs/vue-web-component-wrapper#compatibility)
 
@@ -64,7 +64,7 @@ This mode allows consumers of your component to use the Vue component as a norma
 <my-element></my-element>
 ```
 
-#### Bundle that Registers Multiple Web Components
+### Bundle that Registers Multiple Web Components
 
 When building a web component bundle, you can also target multiple components by using a glob as entry:
 
@@ -74,7 +74,7 @@ vue-cli-service build --target wc --name foo 'src/components/*.vue'
 
 When building multiple web components, `--name` will be used as the prefix and the custom element name will be inferred from the component filename. For example, with `--name foo` and a component named `HelloWorld.vue`, the resulting custom element will be registered as `<foo-hello-world>`.
 
-### Async Web Component
+## Async Web Component
 
 > [Compatibility](https://github.com/vuejs/vue-web-component-wrapper#compatibility)
 
