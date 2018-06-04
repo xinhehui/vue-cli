@@ -38,6 +38,19 @@ module.exports = {
             ]
           },
           {
+            text: 'Plugins',
+            items: [
+              { text: 'Babel', link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel' },
+              { text: 'Typescript', link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-typescript' },
+              { text: 'ESLint', link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint' },
+              { text: 'PWA', link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-pwa' },
+              { text: 'Jest', link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-unit-jest' },
+              { text: 'Mocha', link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-unit-mocha' },
+              { text: 'Cypress', link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-e2e-cypress' },
+              { text: 'Nightwatch', link: 'https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-e2e-nightwatch' }
+            ]
+          },
+          {
             text: 'Changelog',
             link: 'https://github.com/vuejs/vue-cli/blob/dev/CHANGELOG.md'
           }
@@ -45,11 +58,28 @@ module.exports = {
         sidebar: {
           '/guide/': [
             '/guide/',
-            '/guide/cli',
-            '/guide/cli-service',
-            '/guide/assets',
-            '/guide/env',
-            '/guide/build-targets'
+            {
+              title: 'CLI',
+              collapsable: false,
+              children: [
+                '/guide/creating-a-project',
+                '/guide/plugins-and-presets',
+                '/guide/prototyping',
+                '/guide/ui'
+              ]
+            },
+            {
+              title: 'Development',
+              collapsable: false,
+              children: [
+                '/guide/cli-service',
+                '/guide/browser-compatibility',
+                '/guide/html-and-static-assets',
+                '/guide/mode-and-env',
+                '/guide/build-targets',
+                '/guide/deployment'
+              ]
+            }
           ],
           '/dev-guide/': [
             '/dev-guide/plugin-dev.md',

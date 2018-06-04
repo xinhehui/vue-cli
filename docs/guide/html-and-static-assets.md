@@ -1,4 +1,4 @@
-# Static Asset Handling
+# HTML and Static Assets
 
 ## Relative Path Imports
 

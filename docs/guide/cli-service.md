@@ -81,3 +81,5 @@ You can also learn about the available options of each command with:
 ``` bash
 ./node_modules/.bin/vue-cli-service help [command]
 ```
+
+## Git Hooks

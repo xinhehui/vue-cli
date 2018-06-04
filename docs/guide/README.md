@@ -1,4 +1,8 @@
-# Introduction
+---
+sidebarDepth: 1
+---
+
+# Overview
 
 Vue CLI is a full system for rapid Vue.js development, providing:
 
@@ -13,51 +17,39 @@ Vue CLI is a full system for rapid Vue.js development, providing:
 
 Vue CLI aims to be the standard tooling baseline for the Vue ecosystem. It ensures the various build tools work smoothly together with sensible defaults so you can focus on writing your app instead of spending days wrangling with configurations. At the same time, it still offers the flexibility to tweak the config of each tool without the need for ejecting.
 
-## Moving Parts
+## Understanding the Architecture
 
 ### CLI
 
-The CLI is installed globally and provides the `vue` command in your terminal:
+The CLI is a installed globally npm package and provides the `vue` command in your terminal:
 
 ``` bash
 npm install -g @vue/cli
 vue create my-project
 ```
 
-See [CLI docs](./cli.md) for all available commands.
-
 ### CLI Service
 
-`@vue/cli-service` is a dependency installed locally into every project created by `@vue/cli`. It contains the core service that loads other plugins, resolves the final webpack config, and provides the `vue-cli-service` binary to your project. If you are familiar with [create-react-app](https://github.com/facebookincubator/create-react-app), `@vue/cli-service` is essentially the equivalent of `react-scripts`, but more flexible.
+`@vue/cli-service` is an npm package installed locally into every project created by `@vue/cli`. It contains the core service that loads other plugins, resolves the final webpack config, and provides the `vue-cli-service` binary to your project. If you are familiar with [create-react-app](https://github.com/facebookincubator/create-react-app), `@vue/cli-service` is essentially the equivalent of `react-scripts`, but more flexible.
 
 See [CLI Service docs](./cli-service.md) for all available commands.
 
-## Conventions
+### CLI Plugins
 
-### The Index Page
+Each project will likely contain a number of
 
-The file `public/index.html` is a template that will be processed with [html-webpack-plugin](https://github.com/jantimon/html-webpack-plugin). During build, asset links will be injected automatically. In addition, Vue CLI also automatically injects resource hints (`preload/prefetch`), manifest/icon links (when PWA plugin is used) and inlines the webpack runtime / chunk manifest for optimal performance.
+### Presets
 
-### Static Assets Handling
+A preset
 
-Static assets can be handled in two different ways:
+## Development Features
 
-- Imported in JavaScript or referenced in templates/CSS via relative paths. Such references will be handled by webpack.
+- webpack
+- webpack-dev-server
+- pre-processors
+- git hooks
 
-- Placed in the `public` directory and referenced via absolute paths. These assets will simply be copied and not go through webpack.
-
-See [Static Assets Handling](./assets.md) for more details.
-
-### Environment Variables and Modes
-
-It is a common need to customize the app's behavior based on the target environment - for example, you may want the app to use different API endpoints or credentials during development / staging / production environments.
-
-Vue CLI has comprehensive support for specifying different environment variables using modes and `.env` files.
-
-See [Environment Variables and Modes](./env.md) for more details.
-
-## Configuration
-
+## Configuration without Ejecting
 
 Projects created from vue create are ready to go out-of-the-box. The plugins are designed to work with one another so in most cases, all you need to do is pick the features you want during the interactive prompts.
 

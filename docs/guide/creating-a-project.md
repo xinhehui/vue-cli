@@ -1,4 +1,4 @@
-# CLI
+# Creating a Project
 
 ## Installation
 
@@ -210,8 +210,6 @@ You can also build the target file into a production bundle for deployment with 
 ``` bash
 vue build MyComponent.vue
 ```
-
-`vue build` also provides the ability to build the component as a library or a web component. See [Build Targets](./build-targets.md) for more details.
 
 ## Installing Plugins in an Existing Project
 
