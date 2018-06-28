@@ -22,10 +22,11 @@ module.exports = function lint (args = {}, api) {
   const { log, done, exit, chalk } = require('@vue/cli-shared-utils')
 
   const files = args._ && args._.length ? args._ : ['src', 'tests', '*.js']
-  const extensions = require('./eslintOptions').extensions(api)
+  const extensions = require('./eslintOptions').extensions(api, args.type)
   const argsConfig = normalizeConfig(args)
   const config = Object.assign({
-    extensions,
+    ...extensions,
+    useEslintrc: false,
     fix: true,
     cwd
   }, argsConfig)

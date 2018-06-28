@@ -14,13 +14,15 @@ module.exports = (api, { config, lintOn = [] }) => {
   }
 
   if (config === 'airbnb') {
-    eslintConfig.extends.push('@vue/airbnb')
+    eslintConfig.extends.push('airbnb')
     Object.assign(pkg.devDependencies, {
-      '@vue/eslint-config-airbnb': '^3.0.0-rc.3'
+      'eslint':'^5.0.1',
+      "eslint-config-airbnb": "^16.1.0"
     })
   } else if (config === 'standard') {
     eslintConfig.extends.push('@vue/standard')
     Object.assign(pkg.devDependencies, {
+      'eslint':'^5.0.1',
       '@vue/eslint-config-standard': '^3.0.0-rc.3'
     })
   } else if (config === 'prettier') {
@@ -91,7 +93,9 @@ module.exports = (api, { config, lintOn = [] }) => {
   // lint & fix after create to ensure files adhere to chosen config
   if (config && config !== 'base') {
     api.onCreateComplete(() => {
-      require('./lint')({ silent: true }, api)
+      const type = config === 'airbnb' ? 'react' : 'vue';
+
+      require('./lint')({ silent: true, type  }, api)
     })
   }
 }
